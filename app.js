@@ -2,7 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const path = require("path")
 
-const port = 'https://joafx.netlify.app/';
+const port = 5000;
 
 const app = express();
 
@@ -21,5 +21,5 @@ const pdfRoute = require("./routes/pdfmake");
 app.use("/pdfMake", pdfRoute)
 
 app.listen(port, ()=> {
-  console.log(`Server running at`)
+  console.log(`Server running at http://localhost:${port}/`)
 })
