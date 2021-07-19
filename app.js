@@ -23,5 +23,5 @@ const pdfRoute = require("./routes/pdfmake");
 app.use("/pdfMake", pdfRoute)
 
 app.listen(process.env.PORT || port, ()=> {
-  console.log(`Server running at http://localhost:${port}/`)
+  console.log(`Server running at`)
 })
