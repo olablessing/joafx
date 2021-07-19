@@ -13,7 +13,6 @@ mongoose.connect(
 );
 
 
-
 const userSchema = {
 	firstName: String,
 	lastName: String,
@@ -34,7 +33,7 @@ app.get("/", (req, res) => {
 	res.sendFile("index.html");
 });
 
-app.post("/", (req, res) => {
+app.post("/pdfMake/pdf", (req, res) => {
 	let newUser = new User({
 		firstName: req.body.firstName,
 		lastName: req.body.lastName,
