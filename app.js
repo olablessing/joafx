@@ -1,11 +1,13 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const path = require("path")
+const cors = require("cors")
 
 const port = 5000;
 
-const app = express();
 
+const app = express();
+app.use(cors())
 app.use(express.static(path.join(__dirname, "/")));
 
 
@@ -20,6 +22,6 @@ app.get('/', (req, res) => {
 const pdfRoute = require("./routes/pdfmake");
 app.use("/pdfMake", pdfRoute)
 
-app.listen(port, ()=> {
+app.listen(process.env.PORT || port, ()=> {
   console.log(`Server running at http://localhost:${port}/`)
 })
