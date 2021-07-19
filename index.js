@@ -8,7 +8,7 @@ const port = 5000;
 
 const app = express();
 app.use(cors())
-app.use(express.static(path.join(__dirname, "/")));
+app.use(express.static(path.join(__dirname, "public")));
 
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -23,5 +23,5 @@ const pdfRoute = require("./routes/pdfmake");
 app.use("/pdfMake", pdfRoute)
 
 app.listen(process.env.PORT || port, ()=> {
-  console.log(`Server running at`)
+  console.log(`Server running at http://localhost:${port}/`)
 })
