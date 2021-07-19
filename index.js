@@ -12,6 +12,8 @@ mongoose.connect(
 	{ useUnifiedTopology: true }
 );
 
+
+
 const userSchema = {
 	firstName: String,
 	lastName: String,
@@ -20,6 +22,7 @@ const userSchema = {
 };
 
 const User = mongoose.model("User", userSchema);
+
 
 const app = express();
 app.use(cors());
